@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+html {
+    scroll-behavior: smooth;
+}
+/***********************
+FONTS
+**************************/
+@font-face {
+    font-family: 'Dolce Vita';
+    src: url('../fonts/DolceVitaLight.eot');
+    src: url('../fonts/DolceVitaLight.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/DolceVitaLight.woff2') format('woff2'),
+        url('../fonts/DolceVitaLight.woff') format('woff'),
+        url('../fonts/DolceVitaLight.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'NEOTERIC';
+    src: url('../fonts/NEOTERIC-Bold.eot');
+    src: url('../fonts/NEOTERIC-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/NEOTERIC-Bold.woff2') format('woff2'),
+        url('../fonts/NEOTERIC-Bold.woff') format('woff'),
+        url('../fonts/NEOTERIC-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Dolce Vita';
+    src: url('../fonts/DolceVita.eot');
+    src: url('../fonts/DolceVita.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/DolceVita.woff2') format('woff2'),
+        url('../fonts/DolceVita.woff') format('woff'),
+        url('../fonts/DolceVita.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+/****** *FIN FONTS *********/
+header {
+    height: 50px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background: white;    
+}
+
+header nav ul {
+    list-style: none;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+header nav ul li {
+    margin: 0 10px;
+}
+header nav ul li a {
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+    font-size: small;
+    font-family: 'Dolce Vita';
+      
+}
+header nav ul li a:hover {
+    border-bottom: 4px solid #333;
+    opacity: 0.5;
+    color: rgba(19, 19, 201, 0.911);
+}
+header div {
+    display: flex;
+    position: fixed;
+    align-items: center;
+    top: 0;
+    left: 0;
+    padding-left: 5px;
+  
+    
+}
+main {
+    height: 100vh;
+    background: url("../images/fond.jpg") top center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main h1 {
+    text-transform: uppercase;
+    color: white;
+    font-family: 'Dolce Vita';
+    font-weight: normal;
+    font-style: normal;
+
+    
+}
