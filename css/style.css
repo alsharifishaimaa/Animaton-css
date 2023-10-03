@@ -9,7 +9,7 @@ html {
 FONTS
 **************************/
 @font-face {
-    font-family: 'Dolce Vita';
+    font-family: 'DolceLight';
     src: url('../fonts/DolceVitaLight.eot');
     src: url('../fonts/DolceVitaLight.eot?#iefix') format('embedded-opentype'),
         url('../fonts/DolceVitaLight.woff2') format('woff2'),
@@ -19,9 +19,8 @@ FONTS
     font-style: normal;
     font-display: swap;
 }
-
 @font-face {
-    font-family: 'NEOTERIC';
+    font-family: 'Neo';
     src: url('../fonts/NEOTERIC-Bold.eot');
     src: url('../fonts/NEOTERIC-Bold.eot?#iefix') format('embedded-opentype'),
         url('../fonts/NEOTERIC-Bold.woff2') format('woff2'),
@@ -31,9 +30,8 @@ FONTS
     font-style: normal;
     font-display: swap;
 }
-
 @font-face {
-    font-family: 'Dolce Vita';
+    font-family: 'Dolce';
     src: url('../fonts/DolceVita.eot');
     src: url('../fonts/DolceVita.eot?#iefix') format('embedded-opentype'),
         url('../fonts/DolceVita.woff2') format('woff2'),
@@ -43,62 +41,156 @@ FONTS
     font-style: normal;
     font-display: swap;
 }
+
 /****** *FIN FONTS *********/
 header {
-    height: 50px;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    background: white;    
+    height: 70px;/*****hauteur de header******/
+    display: flex;/*permet à l'image et la nav d'être à coté'*/
+    justify-content: space-between;/*répartition des éléments de dorite (navigation) à gauche (logo) et bord à bord du header*/   
 }
-
+header img {
+    height: 50px;
+    margin: 10px;  
+}
+header nav {
+    display: flex;
+    align-items: end;
+    margin-right: 10px;
+    
+   
+}
 header nav ul {
     list-style: none;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center; 
+    display: flex;  
 }
 header nav ul li {
-    margin: 0 10px;
+    display: flex;
+    align-items: baseline; 
 }
 header nav ul li a {
+    font-family: 'Neo';
+    font-size: 16px; /* Ajustez la taille de la police du menu */
+    font-weight: bold;
+    display: block;
     text-decoration: none;
     color: black;
     text-transform: uppercase;
-    font-size: small;
-    font-family: 'Dolce Vita';
-      
+    height: 30px;
+    font-family: 'NEO';
+    box-sizing: border-box;  
+    transition: 0.5s;
+    letter-spacing: 1px;/*va créer un espace entre les lettres interlettrage*/
 }
-header nav ul li a:hover {
-    border-bottom: 4px solid #333;
-    opacity: 0.5;
-    color: rgba(19, 19, 201, 0.911);
+header nav ul li span{
+    margin: 0 10px; /* Espacement entre le logo et le menu */
 }
-header div {
-    display: flex;
-    position: fixed;
-    align-items: center;
-    top: 0;
-    left: 0;
-    padding-left: 5px;
-  
-    
+header nav ul li a:hover, .ici {
+    border-bottom: 8px solid #333;
 }
-main {
-    height: 100vh;
-    background: url("../images/fond.jpg") top center;
+
+main section{
+    height: calc(100vh - 70px);
+    background: url("../images/fond.jpg") center;
     background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-main h1 {
+
+main section h1 {
     text-transform: uppercase;
     color: white;
-    font-family: 'Dolce Vita';
-    font-weight: normal;
-    font-style: normal;
+    font-family: 'Dolce';
+    font-weight: normal;/*enlève le bold qui est mis par défaut sur le h1*/
+    font-size: 80px;  
+    text-align: center;
+}
+main section h1::first-line{
+    font-family: 'DolceLight';/*change la font de la première ligne*/
 
-    
+}
+/*************************************************************les pages***********************************/
+section>div {/*cible la div de premier niveau*/
+    display: flex;/*permet de mettre les 3 div les unes à côté des autres*/
+}
+section>div div {
+    width: 150px;
+    height: 150px;
+    margin: 50px;
+    border: 2px solid white;
+}
+/************rotation********/
+
+#rot>div div:first-of-type{
+    transform: rotate(45deg);
+}
+#rot>div div:nth-of-type(2):hover{
+    transform: rotate(45deg);
+}
+#rot>div div:nth-of-type(3){
+    transition: 0.5s;/*ajoute l'effet sur la rotation*/
+}
+#rot>div div:nth-of-type(3):hover{/*au survol ça tourne*/
+transform: rotate(45deg);
+}
+/*zoom*/
+#zoom>div div:first-of-type{
+    transform: scale(1.2);
+}
+#zoom>div div:nth-of-type(2):hover{
+    transform: scale(0.8);
+}
+#zoom>div div:nth-of-type(3){
+    transition: 0.5s;/*ajoute l'effet sur la rotation*/
+}
+#zoom>div div:nth-of-type(3):hover{/*au survol ça tourne*/
+    transform: scale(0.3);
+}
+/*inclinaision*/
+#incl>div div:first-of-type{
+    transform: skew(15deg);
+}
+#incl>div div:nth-of-type(2):hover{
+    transform: 0.5s;
+    transform: skewX(30deg) skewY(30deg);
+    box-shadow: #333;
+}
+#incl>div div:nth-of-type(3){
+    transform: skew(45deg);
+
+}
+/*déplacement*/
+#dépl>div div:first-of-type{
+    transform: translate(35px, 60px);
+}
+#dépl>div div:nth-of-type(2):hover{
+    transform: scale(1.4) translate(70px,120px);
+    transition: 0.9s;
+    border: 10px solid blueviolet;
+}
+#dépl>div div:nth-of-type(3):hover{
+    transform: scale(1.3) translate(-40px, -120px) rotate(45deg);
+    transition: 0.9s;
+    border: 8px solid rgba(216, 19, 19, 0.918);
+
+}
+/*origine*/
+#orig>div div:first-of-type{
+    transform-origin: 0 0;
+    transform: rotate(30deg);
+
+}
+#orig>div div:nth-of-type(2):hover{
+    transform-origin: 0 0;
+    transform: translateY(90px) skew(45deg) rotate(15deg);
+    transition: 0.9s;
+    border: 8px solid green;
+    border-radius: 30px;
+
+}
+#orig>div div:nth-of-type(3):hover{
+    transform-origin: 30px 45px;
+    transform: rotate(15deg) scaleX(1.6) skewX(30deg) translateY(60px);
+   
+    border: 6px dashed rosybrown;
 }
